@@ -1,0 +1,52 @@
+Linear Program : $\min c^Tx : Ax <=b$
+
+Integer Program: $\min c^Tx: Ax <= b$  where $x_i \in \Z,\forall i =1...n$
+
+Convex Program: $\min f(x) : x \in S$ where $S : $ convex set. $f :S \rightarrow \R$ 
+
+- $\forall x, y \in S, \forall \lambda \in [0,1], \lambda x + (1-\lambda)y \in S, f(\lambda x + (1-\lambda)y) <= \lambda f(x) + (1-\lambda)f(y)$ 
+
+
+
+
+
+
+
+Example/Application
+
+- Transportation Problem
+
+  : Company has a set F of distribution centre , and needs to satisfy demands of a set C of clients
+
+  - Each center $i\in F$ can supply up to $u_i$ units
+  - Each client $j \in C$ requires $d_j \geq 0$ units
+  - Transporting from center $i$ to client $j$ costs \$ $c_{ij} \geq 0$ unit
+
+  $x_{ij}, \forall i \in F, j \in C$. specifies # units transport from center i to oj
+
+  $\min 
+
+- Zero-Sum Game:
+
+  : 2 players: Rose (R) & Colin (C). Note that $A = a_{ij} : i = 1,...,m$ &$ j = 1,...,n$
+
+  R'S strategy is to choose a row $i \in \set{1,...,m}$
+
+  C's strategy is to choose a column $ j \in \set{1,...,n}$
+
+  R, C choose their strategies simultaneously, independently
+
+  Then R pays C amount $a_{ij}$ E.G $A = \begin{bmatrix}5 &-2 \\ 1 & 6  \end{bmatrix}$
+
+  - if C choose $j=1$ C gurantees a payoff of 1 regardless of what R chooses
+  - if C choose $j=2$ C gurantees a payoff of -2 regardless of R's choise.
+  - if C randomizes, choose $j=1,2$ with prob $1/2$ 
+
+
+
+...Blank
+
+What is C's best randomized strategy?
+
+- $A : m \times n$, 
+

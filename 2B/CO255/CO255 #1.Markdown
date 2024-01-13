@@ -1,0 +1,57 @@
+CHAITANYA SWAMY (MC 5106)
+
+
+
+1.  $\min f(x): x \in S$ where $S \subseteq \R^{2}$ so $x \subseteq \R^2$
+
+2. $\max f(x): x \in S$ where $S \subseteq \R^{2}$ so $x \subseteq \R^2$
+
+
+
+In this context
+
+- $f(x)$ is an objective function
+
+- $S$ is a feasible region(domain)
+
+- $x$ is a variable
+
+
+
+We can also say that
+
+ $-\min (-f(x)): x \in S=\max f(x) : x \in S$ 
+
+
+
+2 is often the outcome of optimization problem where
+
+- $S = \emptyset$ : unfeasible problem
+- $S \neq \emptyset$ : if there is some $X \in S : f(\bar{x})>=f(\bar{x})$
+
+$\forall x \in S,$ we say that $\bar{x}$ is an optimal soluation to 2
+
+
+
+This follows that $f(\bar{x})$ is an optimal value of 2. 
+
+- There is one optimal value, but can be multiple solutions
+
+
+
+$S \neq \emptyset$. but there are feasible solutions of arbitrary value $\forall M \in \R, \exists x \in S: f(x) > M$
+
+
+
+Case2 : 2 is unbounded
+
+- $S \neq \empty$ : problem is not unbounded, but no optimal solution
+  - $\min x : x>0$
+  - if $\inf x : x>0$, there exists a solution
+
+
+
+
+
+
+
