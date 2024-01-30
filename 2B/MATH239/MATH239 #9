@@ -1,0 +1,128 @@
+#### Example 1.1
+
+> Let $g_n$ be the number of compositions of $n$ into 2 or more points, using only the numbers 1,3 or 7. Find an expression of $\sum_{n=0}^{\infin}g_nx^n$
+
+
+
+Let $A$ be the set $\set{1,3,7}$. We will only be looking at $A^2, A^3, A^4...$ We see $\Phi_A(x) = x^1 + x^3 + x^7$
+
+The generating series we are interested in $\sum_{n=2}^{\infin}\Phi_{A^n}x=\sum_{n=2}^{\infin}(\Phi_A(x))^n$
+
+- Note that $\sum_{n=2}^{\infin}y^n = y^2\sum_{n=0}^{\infin}y^n= \frac{y^2}{1-y}$
+
+This allows us to find the generating series we want:
+
+$\sum_{n=2}^{\infin}(\Phi_A(x))^n = \frac{(\Phi_A(x))^2}{1-\Phi_A(x)} = \frac{(x+x^3+x^7)^2}{1-x-x^3-x^7}$
+
+- Note that $\Phi_A(x) = \sum_{a \in A}x^{w(a)} = \sum_{a \in \set{1,3,7}} x^{w(a)}= x^{w(1)} + x^{w(3)} + x^{w(7)}=x + x^3+x^7$
+
+
+
+
+
+#### Example 1.2
+
+> Find the number of partitions of $n$, using only odd numbers into an odd number of parts.
+>
+> such as $(1), (3), (5), (7), (1,1,1), (1,1,3),....$
+
+
+
+As before, it is useful to determing the generating series into exactly $1$ part. In this case $A = \set{1,3,5,7,,2n+1}$. So, we have:
+
+$\Phi_A(x) = \sum_{a=\text{odd}}x^{w(a)} = \sum_{a=\text{odd}} x^a=x +x^3+x^5+$
+
+- Notice $x+x^3+x^5+x^7 +... = x(1 + x^2+x^4+x^6+...) = x(1 + (x^2)^1 + (x^2)^2 + (x^2)^3 + ...)$
+
+
+
+This gives that
+
+$\Phi_n(x) = x + x^3 + x^5 = x(1 + (x^2)^1 + (x^2)^2 + ...) = \frac{x}{1-x^2}$
+
+
+
+To find the generating series into an odd number parts. We use
+
+$\sum_{n=\text{odd}} \Phi_{A^n}x = \sum_{n=\text{odd}} (\Phi_A(x))^n = \frac{\Phi_A(x)}{1-\Phi_A(x)^2} = \frac{\frac{x}{1-x^2}}{1-(\frac{x}{1-x^2})^2}$
+
+$= \frac{x-x^3}{1-3x^2 + x^4} = x + 2x^3 + 5x^5 + 13x^7 + 34x^9 +..$
+
+
+
+This last step is just to double check you didn't make a mistake if any of the coefficients are negative, you made a mistake. If any of the small coefficients do not match up with an exhaustive search you made a mistake. From the series there should be 5 compositions of 5 into an oddd number of all parts
+
+$: (1,1,1,1,1), (1,1,3), (1,3,1), (3,1,1), (5)$
+
+
+
+
+
+### Binary String
+
+
+
+#### Definition 
+
+> A binary string is of the form $a_1a_2a_n$ where $a_i \in \set{0,1}$ : $(000,10110,10001)$. The length of $a_1,...,a_n$ is $n$. We often use $\epsilon$ to represent the *empty string* (string length = 0)
+
+
+
+if $A = \set{0,1}$ is the binary strings of length 1, we use $A^2=\set{00,01,10,11}$, which is the same as $\set{(0,0), (0,1), (1,0), (1,1)}$ from before, but easier to write.
+
+
+
+As before $\set{0,1}^* = \cup_{k=0} \set{0,1}^k = \text{ the set of all binary strings, including } \epsilon$
+
+
+
+#### Example
+
+> Let $B$ be the set of all binary strings. Then, 
+>
+> $\Phi_B^{\text{length}} (x) = \Phi_{\set{0,1}^*}^{\text{length}} (x) = \sum_{k=0}^{\infin}\Phi_{\set{0,1}^k}(x) = \sum_{k=0}^{\infin}(\Phi_{\set{0,1}}(x))^k = \frac{1}{1-\Phi_{\set{0,1}}(x)}$
+>
+> Hence $\Phi_{\set{0,1}}^{\text{length}} (x) = x^{\text{length(0)}} + x^{\text{length(1)}} = x+ x+2x$
+>
+> This gives that
+>
+> $\Phi_B^{\text{length}}(x) = \frac{1}{1-2x} = 1+2x+4x^2+8x^3+16x^4+...$
+
+
+
+#### Definition : Regular Expression
+
+> $\in , 0, 1$ are all regular expressions. If $R$ and $S$ are regular expressions, then so is $R \smile S$. If $R$ and $S$ are regular expressions then so is $RS$. Example would be : 0 ,1 are regular expressions Hence 00 is a regular expression as is 10.
+>
+> Hence so is $00\smile10$. This represents the binary strings $\set{00,10}$
+>
+> Hence so is $(00 \smile 10)(00 \smile 10)$ which gives $\set{0000,0010,1000,1010}$ as the words represetned
+>
+> Hence so is $R^k = RRR...\text{(k times)}$ for $k \geq 0$
+>
+> Hence so is $R^* = \in \smile R^1 \smile R^2 \smile R^3....$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

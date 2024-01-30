@@ -92,6 +92,8 @@ Left-skewed/Right-skewed is determined based on where the tail is.
 
 
 
+Boxplot (upper q(0.75), down q(0.25), yellow line = median )
+
 Skewness $g_1$
 
 

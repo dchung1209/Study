@@ -1,0 +1,193 @@
+Recall
+
+Dual of a LP problem encoding the best bound on(P) that can be obtained bt taking a suitable linear combination of constraints of P
+
+
+
+#### Theorem 3.1
+
+> (Weak Duality) : Let (P) be a prime man LP with obj function $max c^Tx$. Let $D$ be its , which in a minimization LP, with object function $min b^Ty$. Let $\bar{x} : \text{feasible to (P)}$. $\bar{y} : \text{feasible to (D)}$. Then $c^T \bar{x} \leq b^T\bar{y}$. 
+
+
+
+##### Proof
+
+Consider (P) in SIF: max $c^Tx : Ax\leq b, x \geq 0$. So $c^T\bar{x} \leq (y^TA)\bar{x} = \bar{y}^T(A\bar{x}) \leq \bar{y}^T b$ since $\bar{y} \geq 0$ and (1)
+
+
+
+#### Corollary 3.2
+
+1. If (P) is unbounded, then (D) is infeasible.
+2. If (D) is unbounded, then (P) is infeasible
+
+
+
+#### Lemma 3.3
+
+> Let (P), (D) be a part of prime-dual LPs. If (P) is infeasible, and (D) is infeasible, then (P) is unbounded
+
+
+
+Exercise : Proof
+
+
+
+#### Theorem 3.4
+
+> Let $ (P), (D) $ be a primal-dual pair of LPs. If $(P)$ has an optimal solution, then so does $(D)$ and $OPT_{(P)} = OPT_{(D)}$
+
+
+
+#### Theorem 3.5
+
+> Let $(P), (D)$ be primal-dual pair. If $(P), (D)$ are both feasible, then they boyh have optimal solutions, and $OPT_{(P)} = OPT_{(D)}$.
+
+
+
+#### Theorem 3.4 + 3.5 : Strong Duality
+
+> Cooking at proof of weak duality (with $(P)$ is in SIF), we infer that if $\bar{x}, \bar{y}$ feasible to $(P), (D)$ respectively then, $c^T\bar{x} = b^T\bar{y}$ happens if and only if
+>
+> ​	 $(a) : \bar{x}_j = 0 | c_j = (\bar{y}^TA)_j$  corresponding dual constraint is tight
+>
+> ​	$ (b): \bar{y}_i = 0 | b_i = (A\bar{x})_i$ corresponding primal constraint is tight
+>
+> $(a), (b)$ : Complementing stackness conditions (CS)
+
+
+
+Weak + Strong Duality: $(P), (D)$ : primal-dual pair.
+
+- $\bar{x}, \bar{y} $ : feasible for $(P), (D)$ respectively. Then $\bar{x}, \bar{y}$ : optimal iff $\bar{x}, \bar{y}$ satisfy CS conditions.
+
+
+
+Application of CS conditions to vhedz for optimality
+
+(P) max $5x_1 + 3x_2 + 5x_3$ 
+
+- $(P1):x_1 : x_1 +2x_2 -x_3 \leq 2 ]\times y_1$ 
+- $(P2): x_2 \leq 0 : 3x_1 +x_2 + 2x_3 \leq 4 ]\times y_2$
+- $(P3) : x_3 \geq 0 : -x_1 + x_2 + x_3 \leq 1 ]\times y_3$
+
+
+
+Question
+
+Is $\bar{x} = (1, -1, 1)^T$ an optimal solution to $(P)$?
+
+- $\bar{x}$ is feasible to $(P)$. By CS conditions, $\bar{x}$ optimal if and only if $\exist \bar{y}$ s.t.
+  - $\bar{y}$ feasible to dual of $(P)$
+  - $\bar{x}, \bar{y}$ satisfy CS conditions
+
+
+
+Dual $(D)$ of $(P)$: min $2y_1 + 4y_2 -y_3$
+
+- $y \geq 0 : y_1 + 3y_2 -y_3 = 5 = x_1$
+- $2y_1 + y_2 + y_3 \leq 3 = x_2$
+- $-y_1 + 2y_2 + y_3 \geq 5 = x_3$
+
+We want $\bar{y}$ to satisfy the bullet points above and CS conditions.
+
+
+
+CS conditions 
+
+(a) $x_j =0 $ or dual constraint 
+
+- $(x_2) : \bar{x}_2 \neq 0$ so $2\bar{y}_1 + \bar{y}_2 + \bar{y}_3 = 3$
+- $(x_3) : \bar{x}_3 \neq 0$ so $-\bar{y}_1 + 2\bar{y}_2 + \bar{y}_3 = 5$
+
+(b) $\bar{y}_i = 0$ or (primal constraint is tight)
+
+- $(P1)$ is not tight so $\bar{y}_1 = 0$
+
+
+
+Thus $\bar{y_1} = 0, \bar{y}_2 = 2, \bar{y}_3 =1$
+
+
+
+#### Theorem 3.4, 3.5
+
+> Let $(P), (D)$ primal-dual pair.
+>
+> (3.4) : If $(P)$ has optimal solutions, then so does $(D)$
+>
+> (3.5) : if $(P), (D)$ both feasible, then both have optimal solutions
+
+
+
+#### Theorem 3.5 => Theorem 3.4
+
+> $(P)$ has an optimal solution which implies that $(P)$ feasible, not unbounded then by Lemma 3.3 it implies that $(D)$ feasible. Since $(P), (D)$ both feasible: by Theorem 3.5, both have optimal solutions and $OPT_{(P)} = OPT_{(D)}$
+
+
+
+#### Theorem 3.6 (Fundemental Theorem of Linear Programming)
+
+> Every LP has only 3 possible outcomes: (P) is infeasible, (P) is unbounded, P has an optimal solution
+
+
+
+##### Proof
+
+Suppose $(P)$ is infeasible, not unbounded. Then dual LP (D) is infeasible by lemma 3.3
+
+=> By theorem 3.5, (P) and (D) has an optimal solution.
+
+
+
+##### Proof of Theorem 3.5:
+
+Prove this for (P) in SIF
+
+- max $c^Tx : Ax \leq b,x \geq 0$ (P)
+- min $b^Ty : A^Ty \geq c. y \geq 0 $ (D)
+
+$A: m \times n, x,c \in \R^n, y,b \in \R^m$
+
+
+
+By weak duality, then suffices to show that following system is infeasible:
+
+$Ax \leq b$
+
+(*) $x \geq 0$
+
+$A^Ty \geq c$
+
+$y \geq 0$
+
+$c^Tx - b^Ty \geq 0 \equiv c^Ty  \geq b^Ty$
+
+
+
+Suppose (*) is infeasible, then by fotkas's Lemma that for system $Mz \leq d : z \geq 0$ is infeasible <=>
+
+$\exist w : w \geq 0, w^TM \geq 0, w^Td < 0$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

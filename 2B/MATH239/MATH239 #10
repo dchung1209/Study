@@ -1,0 +1,95 @@
+
+
+#### Definition
+
+> Let $R$ and $S$ be sets of binary strings. We donte $RS = \set{aB : a = R, B=S}$
+
+
+
+
+
+#### Example
+
+> $R =\set{0,00,000,0000,...} = \text{non-empty binary strings with only 0}$
+>
+> $S = \set{1,11,111}$
+>
+> $RS = \set{01,011,0111,001,0011,00111,...}$
+>
+> $SR = \set{0,110,1110,100,1100,11100,...}$
+>
+> $RR = \set{00,000,0000,...} = R \setminus\set{0} \\ SS = \set{11,111,1111,11111,111111} $
+
+
+
+#### Definition
+
+> Let $R$ be a regular expression representing the words $R$
+>
+> Let $S$ be a regular expression representing the binary strings $\S$
+>
+> - The $\epsilon, 0, 1$ are regular expressions representing the sets $\set{\epsilon}, \set{0}, \set{1}$ respectively
+>
+>   
+>
+> 1. Then $R \smile S$ is a regular expression representing the strings $\R \cup \S$
+> 2. Then $RS$ is a regular expression representing the strings $\R \S$
+> 3. Then $R^k = RR...R$ is a regular expression representing the language:
+>    - $\R \R...\R = \set{\alpha_1 \alpha_2...\alpha_k : \alpha_i \in \R} = \R^k$
+
+
+
+Note that $R^* = \epsilon \smile R \smile R^2 \smile R^3 \smile ..$ is a regular expression for the set of strings.
+
+- $\R^* = \set{\epsilon} \cup \set{\R \cup \R^2 \cup \R^3 \cup..} \\ = \cup_{k=0}^{\infin}\R^k$
+
+
+
+#### Definition
+
+> Let $R$ be a regular expression. Then $R = the set of binary strings represented by R, is called a rational language or regular language.
+
+
+
+Note that all subsets of binary strings are rational languages.
+
+
+
+
+
+##### Example
+
+ $\set{0^n1^n}_{n=0}^{\infin} = \set{\epsilon, 01,0011,000111,...}$ is not a rational language.
+
+
+
+##### Example
+
+$\set{0^p}_{\text{p-prime}} = \set{00, 000,00000,..}$ is not a rational language
+
+
+
+##### Example
+
+Any futile set $\R$ is a rational language
+
+
+
+
+
+
+
+### Ambigious vs Unambiguous
+
+Consider the two regular expressions $(1 \smile 11)^*$ and $1^*$. These both give the rational language $\set{\epsilon, 1,11,111,1111,....}$. We see that $(1 \smile 11)^*$ represents $111$ in three different ways.
+
+- $1.1.1$ or $1.11$ or $11.1$
+
+We see $16*$ has only one way to do this namely $1.1.1
+
+$
+
+
+
+
+
